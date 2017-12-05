@@ -1,0 +1,16 @@
+services:
+  random_node.provider:
+    class: \Drupal\random_node\RandomNode
+    arguments:
+      - '@database'
+      - '@entity_type.manager'
+      - '@language_manager'
+
+  random_node.twig.random_node_extension:
+    class: \Drupal\random_node\TwigExtension\RandomEntityExtension
+    arguments:
+      - '@random_node.provider'
+      - '@entity_type.manager'
+      - '@renderer'
+    tags:
+        - { name: twig.extension }

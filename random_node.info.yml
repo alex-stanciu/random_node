@@ -1,0 +1,5 @@
+name: Random node
+type: module
+description: Provides node randomizer service and twig extension.
+core: 8.x
+package: Other
